@@ -1,0 +1,15 @@
+{
+    "name": "interop-phpobjects/polite-ai",
+    "type": "library",
+    "description": "Interoperability of interfaces around the AI",
+    "keywords": ["ai","ml","machine learning","interop","interoperability"],
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Interop\\Polite\\AI\\": "src/"
+        }
+    }
+}
