@@ -19,25 +19,25 @@ interface Environment
     public function rewardThreshold() : float;
 
     /**
-    * @param Any $action
-    * @return Set(Any $observation, Any $rewards, bool $done, Dict $info)
+    * @param mixed $action
+    * @return array{mixed $observation, float $rewards, bool $done, array<string,mixed> $info}
     */
-    public function step($action) : array;
+    public function step(mixed $action) : array;
 
     /**
-    * @return Any $observation
+    * @return mixed $observation
     **/
     public function reset() : mixed;
 
     /**
-    * @return Any $depends on vender
+    * @return mixed $depends on vender
     */
-    public function render(string $mode=null) : mixed;
+    public function render(?string $mode=null) : mixed;
 
     /**
-    * @return Any $depends on vender
+    * @return mixed $depends on vender
     */
-    public function show(bool $loop=null, int $delay=null) : mixed;
+    public function show(?bool $loop=null, ?int $delay=null) : mixed;
 
     /**
     *
@@ -46,9 +46,9 @@ interface Environment
 
     /**
     * @param int $seed
-    * @return List<int> $seeds
+    * @return array<int> $seeds
     */
-    public function seed(int $seed=null) : array;
+    public function seed(?int $seed=null) : array;
 
     /**
     *
@@ -63,5 +63,5 @@ interface Environment
     /**
     *
     */
-    public function exit(Throwable $e=null) : bool;
+    public function exit(?Throwable $e=null) : bool;
 }
